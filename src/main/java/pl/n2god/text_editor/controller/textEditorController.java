@@ -7,8 +7,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.VBox;
 
 public class textEditorController {
+
+    @FXML
+    private VBox mainPane;
 
     @FXML
     private MenuItem openFile;
@@ -24,6 +28,9 @@ public class textEditorController {
 
     @FXML
     private Button changeToLowerCaseButton;
+
+    @FXML
+    private Button toUpperCaseButton;
 
     @FXML
     private Button clearTextButton;
@@ -44,7 +51,7 @@ public class textEditorController {
             textArea.setText("");
         });
         //o tu np. obsługujemy klawiaturę
-        textArea.addEventFilter(KeyEvent.KEY_TYPED, keyEvent ->{
+        textArea.addEventFilter(KeyEvent.KEY_TYPED, keyEvent -> {
             System.out.println("Wciśnięto: " + keyEvent.getCharacter());
         });
         //a tu zamykamy proram handlerem bo tak sobie wymyśliłem...
@@ -53,5 +60,18 @@ public class textEditorController {
             System.out.println("Zakończono program!");
             System.exit(0);
         });
+
+
     }
+
+    //definiujemy własną metodę poza initialize - przyjmujący m=parametr ActionEvent lub jaki tam sobie chcemy MouseEvent lub Keyboard czy coś
+    public void toUpperCaseAction(ActionEvent actionEvent) {
+        System.out.print("Wciśnięto przycisk:");
+        System.out.println(actionEvent.getEventType());
+        String originalText = textArea.getText();
+        String lowerText = originalText.toUpperCase();
+        textArea.setText(lowerText);
+    }
+
+
 }

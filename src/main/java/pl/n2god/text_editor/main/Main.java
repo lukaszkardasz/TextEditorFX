@@ -20,5 +20,8 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.setTitle("Text editor");
         stage.show();
+
+        scene.setOnMouseEntered(mouseEvent -> System.out.println("Najchano kursorem na scenę!"));
+        scene.setOnMouseExited(mouseEvent -> System.out.println("Kursor wyszedł ze sceny!"));
     }
 }
