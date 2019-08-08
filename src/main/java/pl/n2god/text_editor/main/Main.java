@@ -3,6 +3,8 @@ package pl.n2god.text_editor.main;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -21,7 +23,13 @@ public class Main extends Application {
         stage.setTitle("Text editor");
         stage.show();
 
+        //kliknięcie myszy
+        scene.addEventFilter(MouseEvent.MOUSE_CLICKED, mouseEvent -> System.out.println("Klik!"));
         scene.setOnMouseEntered(mouseEvent -> System.out.println("Najchano kursorem na scenę!"));
         scene.setOnMouseExited(mouseEvent -> System.out.println("Kursor wyszedł ze sceny!"));
+
+        //naciśnięcia klawiszy
+        scene.addEventFilter(KeyEvent.KEY_TYPED, keyEvent -> System.out.println("Nacisnięto przycisk: " + keyEvent.getCharacter()));
+
     }
 }
