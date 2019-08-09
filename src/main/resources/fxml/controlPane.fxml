@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="mainPane" alignment="TOP_CENTER"
+      xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="pl.n2god.text_editor.controller.ControlPaneController">
+    <children>
+        <Button fx:id="changeToLowerCaseButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Change to lower case" />
+      <Button fx:id="toUpperCaseButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false"  text="Change to upper case" />
+      <Button fx:id="clearTextButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="clear text" />
+    </children>
+</VBox>
